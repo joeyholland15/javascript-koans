@@ -18,7 +18,6 @@ describe("About Functions", function() {
     
     function overrideMessage() {
       var message = "Inner";
-
       return message;
     }
     
@@ -29,10 +28,10 @@ describe("About Functions", function() {
 
   it("should have lexical scoping", function() {
     var variable = "top-level";
-
     function parentfunction() {
+    
       var variable = "local";
-
+      
       function childfunction() {
         return variable;
       }
@@ -106,9 +105,9 @@ describe("About Functions", function() {
       // An internal comment
       return a * b;
     };
-    expect(multiply.toString()).toBe(function(a, b) {
-    	//An internal comment
-    	return a * b;
-    };)
-  });    
+    expect(multiply.toString()).toBe("function (a, b) {\n\
+    	// An internal comment\n\
+    	return a * b;\n\
+    }");
+  });
 });
