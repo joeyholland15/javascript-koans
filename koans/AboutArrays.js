@@ -26,7 +26,7 @@ describe("About Arrays", function() {
     expect(array).toEqual([1, 2]);
     
     array.push(3);
-    expect(array).toEqual([1,2,3);
+    expect(array).toEqual([1,2,3]);
   });
 
   it("should understand array length", function() {
@@ -48,11 +48,11 @@ describe("About Arrays", function() {
     
     expect(array.slice(0, 1)).toEqual(["peanut"]);
     expect(array.slice(0, 2)).toEqual(["peanut","butter"]);
-    expect(array.slice(2, 2)).toEqual();
+    expect(array.slice(2, 2)).toEqual([]);
     expect(array.slice(2, 20)).toEqual(["and","jelly"]);
-    expect(array.slice(3, 0)).toEqual();
+    expect(array.slice(3, 0)).toEqual([]);
     expect(array.slice(3, 100)).toEqual(["jelly"]);
-    expect(array.slice(5, 1)).toEqual();
+    expect(array.slice(5, 1)).toEqual([]);
   });
 
   it("should know array references", function() {
@@ -70,7 +70,7 @@ describe("About Arrays", function() {
 
     var copyOfArray = array.slice();
     copyOfArray[3] = "changed in copyOfArray";
-    expect(array[3]).toBe("changed in copyOfArray");
+    expect(array[3]).toBe("three");
   });
 
   it("should push and pop", function() {
