@@ -92,16 +92,16 @@ describe("About Applying What We Have Learnt", function() {
   });
 
   it("should count the ingredient occurrence (functional)", function () {
-    var ingredientCount = _.chain(products)
-    	.map(function(pizza) {return pizza.ingredients;}
+    var ingredientCount = _(products).chain()
+    	.map(function(pizza) {return pizza.ingredients} )
     	.flatten()
-    	.reduce(function(totalObj, curr) {
-    		if(curr in totalObj) {
-    			totalObj[curr] += 1; 
+    	.reduce(function(total, curr) {
+    		if(curr in total) {
+    			total[curr] += 1;
     		} else {
-    			totalObj[curr] = 1;
-    		};
-    		return totalObj;
+    			total[curr] = 1;
+    		}
+    		return total;
     	}, {})
     	.value();
     
